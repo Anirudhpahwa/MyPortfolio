@@ -11,12 +11,15 @@ import ExperienceSection from "@/components/ExperienceSection";
 import EducationSection from "@/components/EducationSection";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
 
   return (
     <>
+      {showLoader && <LoadingScreen onDone={() => setShowLoader(false)} />}
       <CustomCursor />
       <Navbar onContactClick={() => setContactOpen(true)} />
 
