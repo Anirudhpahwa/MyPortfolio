@@ -1,7 +1,6 @@
 "use client";
 
 const CONTACT_LINKS = [
-  { label: "anirudhpahwa12@gmail.com", bg: "#ffcc00", href: "mailto:anirudhpahwa12@gmail.com" },
   { label: "GitHub", bg: "#ffb3ab", href: "https://github.com/Anirudhpahwa" },
   {
     label: "LinkedIn",
@@ -30,11 +29,15 @@ export default function ContactModal({ onClose }: { onClose: () => void }) {
         </h2>
 
         <div className="space-y-4">
+          <p className="font-bold tracking-wide text-on-surface-variant">
+            anirudhpahwa12@gmail.com
+          </p>
+
           {CONTACT_LINKS.map(({ label, bg, href }) => (
             <a
               key={label}
               href={href}
-              target={href.startsWith("http") ? "_blank" : undefined}
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 border-4 border-primary rounded-xl hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#1a1a1a] transition-all"
               style={{ background: bg }}
