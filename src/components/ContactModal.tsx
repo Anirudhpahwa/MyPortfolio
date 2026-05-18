@@ -1,7 +1,7 @@
 "use client";
 
 const CONTACT_LINKS = [
-  { label: "Email", bg: "#ffcc00", href: "mailto:anirudhpahwa12@gmail.com" },
+  { label: "anirudhpahwa12@gmail.com", bg: "#ffcc00", href: "mailto:anirudhpahwa12@gmail.com" },
   { label: "GitHub", bg: "#ffb3ab", href: "https://github.com/Anirudhpahwa" },
   {
     label: "LinkedIn",
