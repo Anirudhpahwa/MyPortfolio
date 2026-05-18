@@ -1,8 +1,8 @@
 const ITEMS = [
-  "Form Follows Function",
-  "Digital Architecture",
-  "Neo-Brutalist Logic",
-  "Bauhaus Legacy",
+  "⚙️ BACKEND SYSTEMS",
+  "🥽 VR/XR DEVELOPMENT",
+  "🧠 CLEAN ARCHITECTURE",
+  "🚀 ALWAYS BUILDING",
 ];
 
 export default function MarqueeStrip() {
