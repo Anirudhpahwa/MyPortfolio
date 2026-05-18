@@ -95,6 +95,20 @@ h4,
   }
 }
 
+/* Suppress native cursor on all interactive elements so the custom cursor shows cleanly */
+@media (pointer: fine) {
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  label,
+  summary,
+  [role="button"] {
+    cursor: none !important;
+  }
+}
+
 /* Custom cursor */
 .custom-cursor {
   width: 40px;

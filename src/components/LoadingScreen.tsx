@@ -39,18 +39,18 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.65, ease: "easeInOut" }}
           className="fixed inset-0 z-[200] flex items-center justify-center overflow-hidden"
-          style={{ background: "#0d0d0d" }}
+          style={{ background: "#F8F6F2" }}
         >
-          {/* Horizontal yellow grid lines */}
+          {/* Horizontal purple grid lines */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               backgroundImage: `repeating-linear-gradient(
                 to bottom,
                 transparent 0px,
-                transparent calc(11.11% - 2px),
-                #ffcc00 calc(11.11% - 2px),
-                #ffcc00 11.11%
+                transparent calc(11.11% - 6px),
+                #A78BFA calc(11.11% - 6px),
+                #A78BFA 11.11%
               )`,
             }}
           />
@@ -59,13 +59,13 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
           <div className="relative z-10 flex flex-col items-center gap-6">
             <p
               style={{
-                fontFamily: "var(--font-headline)",
-                color: "#ffcc00",
+                fontFamily: "var(--font-poppins), sans-serif",
+                color: "#111111",
                 fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
-                fontWeight: 900,
-                fontStyle: "italic",
-                letterSpacing: "0.1em",
-                textShadow: "4px 4px 0px rgba(0,0,0,0.8)",
+                fontWeight: 800,
+                fontStyle: "normal",
+                letterSpacing: "0.08em",
+                textShadow: "3px 3px 0px rgba(167, 139, 250, 0.4)",
               }}
             >
               LOADING...
@@ -73,10 +73,10 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
 
             <div
               style={{
-                color: "#ffffff",
+                color: "#111111",
                 fontWeight: 900,
                 fontSize: "0.85rem",
-                border: "2px solid #ffffff",
+                border: "2px solid #A78BFA",
                 padding: "2px 14px",
                 letterSpacing: "0.05em",
                 minWidth: "56px",
@@ -91,19 +91,20 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
               style={{
                 width: "min(320px, 80vw)",
                 height: "30px",
-                border: "4px solid #ffffff",
+                border: "4px solid #111111",
                 borderRadius: "9999px",
                 overflow: "hidden",
-                background: "#1a1a1a",
+                background: "#EDE9FE",
               }}
             >
               <div
                 style={{
                   height: "100%",
                   width: `${progress}%`,
-                  background: "#ffcc00",
+                  background: "#A78BFA",
                   borderRadius: "9999px",
                   transition: "width 60ms linear",
+                  boxShadow: "2px 0px 8px rgba(167, 139, 250, 0.5)",
                 }}
               />
             </div>
