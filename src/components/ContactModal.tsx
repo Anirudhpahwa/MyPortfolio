@@ -8,7 +8,6 @@ const CONTACT_LINKS = [
     bg: "#a8c6ff",
     href: "https://www.linkedin.com/in/anirudh-pahwa-885034276/",
   },
-  { label: "LeetCode", bg: "#d6e3ff", href: "#" },
 ];
 
 export default function ContactModal({ onClose }: { onClose: () => void }) {
