@@ -2,6 +2,7 @@
 
 const CONTACT_LINKS = [
   { label: "GitHub", bg: "#ffb3ab", href: "https://github.com/Anirudhpahwa" },
+
   {
     label: "LinkedIn",
     bg: "#a8c6ff",
@@ -29,9 +30,14 @@ export default function ContactModal({ onClose }: { onClose: () => void }) {
         </h2>
 
         <div className="space-y-4">
-          <p className="font-bold tracking-wide text-on-surface-variant">
-            anirudhpahwa12@gmail.com
-          </p>
+          <div
+            className="flex items-center gap-4 p-4 border-4 border-primary rounded-xl"
+            style={{ background: "#ffcc00" }}
+          >
+            <span className="font-black tracking-widest">
+              anirudhpahwa12@gmail.com
+            </span>
+          </div>
 
           {CONTACT_LINKS.map(({ label, bg, href }) => (
             <a
