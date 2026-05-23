@@ -59,13 +59,13 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
           <div className="relative z-10 flex flex-col items-center gap-6">
             <p
               style={{
-                fontFamily: "var(--font-poppins), sans-serif",
-                color: "#111111",
+                fontFamily: "var(--font-alfa-slab), serif",
+                color: "#A78BFA",
                 fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
-                fontWeight: 800,
-                fontStyle: "normal",
-                letterSpacing: "0.08em",
-                textShadow: "3px 3px 0px rgba(167, 139, 250, 0.4)",
+                fontWeight: 400,
+                fontStyle: "italic",
+                letterSpacing: "0.06em",
+                textShadow: "4px 4px 0px rgba(0, 0, 0, 0.7)",
               }}
             >
               LOADING...
