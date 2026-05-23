@@ -47,7 +47,7 @@ const EXPERIENCE = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-24 border-t-8 border-primary">
+    <section id="experience" className="pt-24 pb-12 bg-surface-container rounded-[3rem] border-4 border-primary px-8 md:px-16 mb-24 relative overflow-hidden">
       <h2 className="text-6xl md:text-8xl font-black uppercase leading-none tracking-tighter mb-20">
         CAREER
         <br />
@@ -55,10 +55,10 @@ export default function ExperienceSection() {
       </h2>
 
       <div className="space-y-12">
-        {EXPERIENCE.map(({ duration, role, company, companyColor, icon, points }) => (
+        {EXPERIENCE.map(({ duration, role, company, companyColor, icon, points }, i) => (
           <div
             key={company + role}
-            className="grid md:grid-cols-4 gap-8 pb-12 border-b-4 border-primary"
+            className={`grid md:grid-cols-4 gap-8 pb-12 ${i < EXPERIENCE.length - 1 ? "border-b-4 border-primary" : ""}`}
           >
             <div className="text-2xl font-black uppercase tracking-tighter">
               {duration}
