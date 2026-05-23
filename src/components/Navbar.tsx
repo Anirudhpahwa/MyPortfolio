@@ -32,19 +32,16 @@ export default function Navbar({
   const detectActive = useCallback(() => {
     const sections = document.querySelectorAll<HTMLElement>("section[id]");
     let current = "";
+    const lastIdx = sections.length - 1;
 
-    sections.forEach((s) => {
-      if (s.getBoundingClientRect().top <= 160) current = s.id;
+    sections.forEach((s, i) => {
+      // The last section (Education) can't be scrolled to bring its top to 160px
+      // because the footer caps the max scroll position. Use 60% of the viewport
+      // height as its threshold so it activates via normal scroll events at the
+      // same visual moment as the other sections.
+      const threshold = i === lastIdx ? window.innerHeight * 0.6 : 160;
+      if (s.getBoundingClientRect().top <= threshold) current = s.id;
     });
-
-    // When the page is at or near its scroll limit, force the last section active.
-    // This handles Education: the footer prevents the page from scrolling far enough
-    // to naturally push Education's top past the 160px threshold.
-    const atBottom =
-      window.innerHeight + window.scrollY >= document.body.scrollHeight - 60;
-    if (atBottom && sections.length > 0) {
-      current = sections[sections.length - 1].id;
-    }
 
     setActiveSection(current);
   }, []);
