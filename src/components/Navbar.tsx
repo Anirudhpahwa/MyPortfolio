@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useCallback, useRef, useState } from "react";
 
 const NAV_LINKS = [
   { label: "ABOUT", href: "#about" },
@@ -17,40 +17,48 @@ export default function Navbar({
 }) {
   const [activeSection, setActiveSection] = useState("");
   const [dateStr, setDateStr] = useState("");
+  const fallbackRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    function updateDate() {
-      const now = new Date();
-      const days = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ];
-      const day = days[now.getDay()];
-      const m = now.getMonth() + 1;
-      const d = now.getDate();
-      const y = now.getFullYear();
-      setDateStr(`${day}, ${m}/${d}/${y}`);
+    const now = new Date();
+    const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const day = days[now.getDay()];
+    const m = now.getMonth() + 1;
+    const d = now.getDate();
+    const y = now.getFullYear();
+    setDateStr(`${day}, ${m}/${d}/${y}`);
+  }, []);
+
+  const detectActive = useCallback(() => {
+    const sections = document.querySelectorAll<HTMLElement>("section[id]");
+    let current = "";
+
+    sections.forEach((s) => {
+      if (s.getBoundingClientRect().top <= 160) current = s.id;
+    });
+
+    // When the page is at or near its scroll limit, force the last section active.
+    // This handles Education: the footer prevents the page from scrolling far enough
+    // to naturally push Education's top past the 160px threshold.
+    const atBottom =
+      window.innerHeight + window.scrollY >= document.body.scrollHeight - 60;
+    if (atBottom && sections.length > 0) {
+      current = sections[sections.length - 1].id;
     }
-    updateDate();
+
+    setActiveSection(current);
   }, []);
 
   useEffect(() => {
-    function onScroll() {
-      const sections = document.querySelectorAll<HTMLElement>("section[id]");
-      let current = "";
-      sections.forEach((s) => {
-        if (window.scrollY >= s.offsetTop - 120) current = s.id;
-      });
-      setActiveSection(current);
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    // "scrollend" fires once smooth-scroll animation finishes (Chrome 114+, FF 109+)
+    window.addEventListener("scroll", detectActive, { passive: true });
+    window.addEventListener("scrollend", detectActive, { passive: true });
+    detectActive();
+    return () => {
+      window.removeEventListener("scroll", detectActive);
+      window.removeEventListener("scrollend", detectActive);
+    };
+  }, [detectActive]);
 
   function handleNavClick(
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -59,7 +67,14 @@ export default function Navbar({
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
-      window.scrollTo({ top: (target as HTMLElement).offsetTop - 80, behavior: "smooth" });
+      window.scrollTo({
+        top: (target as HTMLElement).offsetTop - 80,
+        behavior: "smooth",
+      });
+      // Fallback for browsers that don't support scrollend: re-run detection
+      // ~800ms after the click, by which time smooth scroll has settled.
+      if (fallbackRef.current) clearTimeout(fallbackRef.current);
+      fallbackRef.current = setTimeout(detectActive, 800);
     }
   }
 

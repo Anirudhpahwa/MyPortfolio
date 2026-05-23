@@ -26,7 +26,7 @@ export default function EducationSection() {
             Aug 2023 – Aug 2027
           </p>
           <p className="font-medium opacity-80">
-            GPA: 8.6/10 — Coursework: Data Structures &amp; Algorithms, OOP,
+            GPA: 8.7/10 — Coursework: Data Structures &amp; Algorithms, OOP,
             Software Engineering, Artificial Intelligence
           </p>
         </div>
