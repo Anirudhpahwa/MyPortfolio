@@ -56,7 +56,7 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
           />
 
           {/* Center content */}
-          <div className="relative z-10 flex flex-col items-center gap-6">
+          <div className="relative z-10 flex flex-col items-center gap-6" style={{ marginTop: "4rem" }}>
             <p
               style={{
                 fontFamily: "var(--font-alfa-slab), serif",
@@ -81,6 +81,8 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
                 letterSpacing: "0.05em",
                 minWidth: "56px",
                 textAlign: "center",
+                position: "relative",
+                top: "-2.25rem",
               }}
             >
               {progress}%
