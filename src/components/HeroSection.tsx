@@ -28,10 +28,10 @@ export default function HeroSection({
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-20 h-6 bg-white/60 border-2 border-primary/20 backdrop-blur-sm -rotate-2 z-10" />
               <div className="w-48 h-48 rounded-full border-[6px] border-primary overflow-hidden bg-primary-container relative">
                 <Image
-                  src="/profile1.png"
+                  src="/portfolio image.png"
                   alt="Anirudh Pahwa"
                   fill
-                  className="object-cover object-top scale-110"
+                  className="object-cover object-center scale-110"
                 />
               </div>
             </div>
