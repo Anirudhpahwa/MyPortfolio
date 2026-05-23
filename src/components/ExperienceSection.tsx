@@ -3,7 +3,7 @@ const EXPERIENCE = [
     duration: "July 2025 — Aug 2025",
     role: "Frontend Developer Intern",
     company: "IRCTC",
-    companyColor: "text-tertiary",
+    companyColor: "text-black",
     icon: "web",
     points: [
       "Developed and improved frontend components for a high-traffic platform, focusing on responsiveness and usability.",
@@ -14,7 +14,7 @@ const EXPERIENCE = [
     duration: "July 2024 — Aug 2024",
     role: "Intern",
     company: "Centre for Railway Information Systems (CRIS), India",
-    companyColor: "text-secondary",
+    companyColor: "text-black",
     icon: "engineering",
     points: [
       "Assisted with testing and documentation in large-scale automation systems.",
@@ -36,7 +36,7 @@ const EXPERIENCE = [
     duration: "Mar 2025 — Present",
     role: "President | Campus Ambassador",
     company: "Midknite Esports Club | SKOAR! College Gaming Club",
-    companyColor: "text-tertiary",
+    companyColor: "text-black",
     icon: "emoji_events",
     points: [
       "Led planning and execution of collegiate esports tournaments, managing formats, scheduling, and live operations.",
