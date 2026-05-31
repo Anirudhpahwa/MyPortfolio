@@ -27,6 +27,9 @@ const alfaSlabOne = Alfa_Slab_One({
 export const metadata: Metadata = {
   title: "Anirudh Pahwa — Portfolio",
   description: "Software Engineer Portfolio",
+  icons: {
+    icon: "/portfolio%20image1.png",
+  },
 };
 
 export default function RootLayout({
@@ -37,6 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${poppins.variable} ${alfaSlabOne.variable}`}>
       <head>
+        <link rel="icon" href="/portfolio%20image1.png" type="image/png" />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
           rel="stylesheet"
