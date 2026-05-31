@@ -15,7 +15,7 @@ export default function VideoModal({ onClose }: { onClose: () => void }) {
           ✕
         </button>
         <video
-          src="/videos/gunlab.mp4"
+          src="/videos/GunLab.mp4"
           controls
           autoPlay
           className="w-full block"
