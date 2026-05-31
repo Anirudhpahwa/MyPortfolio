@@ -58,7 +58,7 @@ export default function HeroSection({
                 <span className="bg-secondary-container border-2 border-primary px-2 py-0.5 text-[10px] font-black uppercase">
                   [STATUS]
                 </span>
-                <span className="text-sm font-bold uppercase">Open to Projects</span>
+                <span className="text-sm font-bold uppercase">Open to Work</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="bg-tertiary-container border-2 border-primary px-2 py-0.5 text-[10px] font-black uppercase">
@@ -71,11 +71,12 @@ export default function HeroSection({
             {/* CTA buttons */}
             <div className="w-full space-y-4 mb-8">
               <a
-                href="/Anirudh_Pahwa_Resume.pdf"
-                download
+                href="/Resume/Anirudh_Pahwa_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full bg-[#6EE7B7] border-4 border-primary py-4 rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_#1a1a1a] transition-all"
               >
-                DOWNLOAD_RESUME
+                RESUME
               </a>
               <button
                 onClick={onContactClick}
