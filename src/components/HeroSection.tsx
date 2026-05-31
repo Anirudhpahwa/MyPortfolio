@@ -133,7 +133,7 @@ export default function HeroSection({
             </h1>
             <div className="space-y-8">
               <p className="text-2xl md:text-3xl font-medium leading-relaxed">
-                I&apos;m a pre-final year CS student at GGSIPU. I build backend systems and games, currently exploring VR and experimental mechanics. I enjoy solving tough bugs and making things feel good to use.
+                I&apos;m a CS student at GGSIPU. I build backend systems and games, currently exploring VR and experimental mechanics. I enjoy solving tough bugs and making things feel good to use.
               </p>
 
               {/* Availability badge */}
